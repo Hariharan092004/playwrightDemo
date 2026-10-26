@@ -42,7 +42,6 @@ namespace PlaywrightDemo
 
         //     await Expect(heading).ToBeVisibleAsync();
         // }
-        // 4
         // [Test]
         // public async Task interactionElementTest()
         // {
@@ -144,25 +143,61 @@ namespace PlaywrightDemo
         //     // await Expect(link).ToBeVisibleAsync();
         // }
         
+        // [Test]
+        // public async Task consulting_Schedule_Link_ShouldOpenForm()
+        // {
+        //     await Page.GotoAsync("https://ultimateqa.com/consulting/");
+
+        //     var link = Page.GetByRole(
+        //         AriaRole.Link,
+        //         new()
+        //         {
+        //             Name = "SCHEDULE A FREE DISCOVERY SESSION",
+        //             Exact = true
+        //         }).Nth(0);
+
+        //     var newPage = await Page.RunAndWaitForPopupAsync(
+        //         async () => await link.ClickAsync());
+
+        //     await Expect(newPage).ToHaveURLAsync(
+        //         "https://40m40a.share-na2.hsforms.com/23I1BOSbZSkmmb1UP2OzAjw");
+        // }
+        
+        // // Radio Button Tests
+        // [Test]
+        // public async Task MaleRadioButton_ShouldBeVisible()
+        // {
+        //     await Page.GotoAsync(
+        //         "https://ultimateqa.com/simple-html-elements-for-automation/");
+
+        //     var maleRadio = Page.Locator("input[type='radio']").Nth(0);
+
+        //     await Expect(maleRadio).ToBeVisibleAsync();
+        // }
+        // [Test]
+        // public async Task FemaleRadioButton_ShouldBeVisible()
+        // {
+        //     await Page.GotoAsync(
+        //         "https://ultimateqa.com/simple-html-elements-for-automation/");
+
+        //     var femaleRadio = Page.Locator("input[type='radio']").Nth(1);
+
+        //     await Expect(femaleRadio).ToBeVisibleAsync();
+        // }
+
+        //Checkbox Tests
+        
+        
         [Test]
-        public async Task consulting_Schedule_Link_ShouldOpenForm()
+        public async Task BikeCheckbox_ShouldBeVisible()
         {
-            await Page.GotoAsync("https://ultimateqa.com/consulting/");
+            await Page.GotoAsync(
+                "https://ultimateqa.com/simple-html-elements-for-automation/");
 
-            var link = Page.GetByRole(
-                AriaRole.Link,
-                new()
-                {
-                    Name = "SCHEDULE A FREE DISCOVERY SESSION",
-                    Exact = true
-                }).Nth(0);
+            var bikeCheckbox = Page.Locator(
+                "input[type='checkbox']").Nth(0);
 
-            var newPage = await Page.RunAndWaitForPopupAsync(
-                async () => await link.ClickAsync());
-
-            await Expect(newPage).ToHaveURLAsync(
-                "https://40m40a.share-na2.hsforms.com/23I1BOSbZSkmmb1UP2OzAjw");
+            await Expect(bikeCheckbox).ToBeVisibleAsync();
         }
-     
     }
 }
