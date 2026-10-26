@@ -43,97 +43,126 @@ namespace PlaywrightDemo
         //     await Expect(heading).ToBeVisibleAsync();
         // }
         // 4
+        // [Test]
+        // public async Task interactionElementTest()
+        // {
+        //     // Navigate to the automation page
+        //     await Page.GotoAsync("https://ultimateqa.com/automation");
+
+        //     // Locate the link and click it
+        //     await Page.GetByRole(AriaRole.Link, new() {Name = "Interactions with simple elements"}).ClickAsync();
+
+        //     // Verify that the browser navigated to the expected URL
+        //     await Expect(Page).ToHaveURLAsync("https://ultimateqa.com/simple-html-elements-for-automation/");
+        // }
+        // [Test]
+        // public async Task clickMeButton_ShouldBeVisible()
+        // {
+        //     // Open the practice page
+        //     await Page.GotoAsync(
+        //         "https://ultimateqa.com/simple-html-elements-for-automation/"
+        //     );
+
+        //     // Locate the button by its accessible name
+        //     var button = Page.GetByRole(
+        //         AriaRole.Button,
+        //         new() { Name = "Click Me!", Exact = true }
+        //     );
+
+        //     // Verify that the button is visible
+        //     await Expect(button).ToBeVisibleAsync();
+        // }
+        // [Test]
+        // public async Task raiseButton_ShouldBeVisible()
+        // {
+        //     // Open the practice page
+        //     await Page.GotoAsync(
+        //         "https://ultimateqa.com/simple-html-elements-for-automation/"
+        //     );
+
+        //     // Locate the button by its accessible name
+        //     var button = Page.GetByRole(
+        //         AriaRole.Button,
+        //         new() { Name = "Raise", Exact = true }
+        //     );
+
+        //     // Verify that the button is visible
+        //     await Expect(button).ToBeVisibleAsync();
+        // }
+        // [Test]
+        // public async Task Button1_ShouldBeClickable()
+        // {
+        //     await Page.GotoAsync(
+        //         "https://ultimateqa.com/simple-html-elements-for-automation/"
+        //     );
+
+        //     var firstButton = Page.Locator("button.buttonClass");
+
+        //     await Expect(firstButton).ToBeVisibleAsync();
+        //     await Expect(firstButton).ToBeEnabledAsync();
+
+        //     await firstButton.ClickAsync();
+        // }
+        // [Test]
+        // public async Task Button2_ShouldBeClickable()
+        // {
+        //     await Page.GotoAsync(
+        //         "https://ultimateqa.com/simple-html-elements-for-automation/"
+        //     );
+
+        //     var secondButton = Page.Locator("button[name='button1']");
+
+        //     await Expect(secondButton).ToBeVisibleAsync();
+        //     await Expect(secondButton).ToBeEnabledAsync();
+
+        //     await secondButton.ClickAsync();
+        // }
+        // [Test]
+        // public async Task clickUsingIdLink_ShouldBeVisible()
+        // {
+        //     // Open the practice page
+        //     await Page.GotoAsync(
+        //         "https://ultimateqa.com/simple-html-elements-for-automation/"
+        //     );
+
+        //     // Locate the link using its accessible name
+        //     var link = Page.GetByRole(
+        //         AriaRole.Link,
+        //         new() { Name = "Click this button using \"ID\"", Exact = true }
+        //     );
+
+        //     // Verify that the link is visible
+        //     await Expect(link).ToBeVisibleAsync();
+        // }
+        // [Test]
+        // public async Task ServicesLink_ShouldBeVisible()
+        // {
+        //     await Page.GotoAsync("https://ultimateqa.com/simple-html-elements-for-automation/");
+        //     var link = Page.GetByRole(AriaRole.Link, new() { Name = "Services", Exact = true });
+        //     await link.ClickAsync();
+        //     await Expect(Page).ToHaveURLAsync("https://ultimateqa.com/consulting/");
+        //     // await Expect(link).ToBeVisibleAsync();
+        // }
+        
         [Test]
-        public async Task interactionElementTest()
+        public async Task consulting_Schedule_Link_ShouldOpenForm()
         {
-            // Navigate to the automation page
-            await Page.GotoAsync("https://ultimateqa.com/automation");
+            await Page.GotoAsync("https://ultimateqa.com/consulting/");
 
-            // Locate the link and click it
-            await Page.GetByRole(AriaRole.Link, new() {Name = "Interactions with simple elements"}).ClickAsync();
-
-            // Verify that the browser navigated to the expected URL
-            await Expect(Page).ToHaveURLAsync("https://ultimateqa.com/simple-html-elements-for-automation/");
-        }
-        [Test]
-        public async Task clickMeButton_ShouldBeVisible()
-        {
-            // Open the practice page
-            await Page.GotoAsync(
-                "https://ultimateqa.com/simple-html-elements-for-automation/"
-            );
-
-            // Locate the button by its accessible name
-            var button = Page.GetByRole(
-                AriaRole.Button,
-                new() { Name = "Click Me!", Exact = true }
-            );
-
-            // Verify that the button is visible
-            await Expect(button).ToBeVisibleAsync();
-        }
-        [Test]
-        public async Task raiseButton_ShouldBeVisible()
-        {
-            // Open the practice page
-            await Page.GotoAsync(
-                "https://ultimateqa.com/simple-html-elements-for-automation/"
-            );
-
-            // Locate the button by its accessible name
-            var button = Page.GetByRole(
-                AriaRole.Button,
-                new() { Name = "Raise", Exact = true }
-            );
-
-            // Verify that the button is visible
-            await Expect(button).ToBeVisibleAsync();
-        }
-        [Test]
-        public async Task Button1_ShouldBeClickable()
-        {
-            await Page.GotoAsync(
-                "https://ultimateqa.com/simple-html-elements-for-automation/"
-            );
-
-            var firstButton = Page.Locator("button.buttonClass");
-
-            await Expect(firstButton).ToBeVisibleAsync();
-            await Expect(firstButton).ToBeEnabledAsync();
-
-            await firstButton.ClickAsync();
-        }
-        [Test]
-        public async Task Button2_ShouldBeClickable()
-        {
-            await Page.GotoAsync(
-                "https://ultimateqa.com/simple-html-elements-for-automation/"
-            );
-
-            var secondButton = Page.Locator("button[name='button1']");
-
-            await Expect(secondButton).ToBeVisibleAsync();
-            await Expect(secondButton).ToBeEnabledAsync();
-
-            await secondButton.ClickAsync();
-        }
-        [Test]
-        public async Task clickUsingIdLink_ShouldBeVisible()
-        {
-            // Open the practice page
-            await Page.GotoAsync(
-                "https://ultimateqa.com/simple-html-elements-for-automation/"
-            );
-
-            // Locate the link using its accessible name
             var link = Page.GetByRole(
                 AriaRole.Link,
-                new() { Name = "Click this button using \"ID\"", Exact = true }
-            );
+                new()
+                {
+                    Name = "SCHEDULE A FREE DISCOVERY SESSION",
+                    Exact = true
+                }).Nth(0);
 
-            // Verify that the link is visible
-            await Expect(link).ToBeVisibleAsync();
+            var newPage = await Page.RunAndWaitForPopupAsync(
+                async () => await link.ClickAsync());
+
+            await Expect(newPage).ToHaveURLAsync(
+                "https://40m40a.share-na2.hsforms.com/23I1BOSbZSkmmb1UP2OzAjw");
         }
-        
+     
     }
 }
