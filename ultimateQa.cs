@@ -199,5 +199,25 @@ namespace PlaywrightDemo
 
             await Expect(bikeCheckbox).ToBeVisibleAsync();
         }
+        
+        [Test]
+        public async Task BikeCheckbox_ShouldBeChecked()
+        {
+            await Page.GotoAsync(
+                "https://ultimateqa.com/simple-html-elements-for-automation/");
+
+            var bikeCheckbox = Page.Locator(
+                "input[type='checkbox'][value='Bike']");
+
+            Console.WriteLine(
+                $"Before click: {await bikeCheckbox.IsCheckedAsync()}");
+
+            await bikeCheckbox.ClickAsync();
+
+            Console.WriteLine(
+                $"After click: {await bikeCheckbox.IsCheckedAsync()}");
+
+            await Expect(bikeCheckbox).ToBeCheckedAsync();
+        }
     }
 }
