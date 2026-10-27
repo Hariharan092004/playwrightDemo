@@ -187,37 +187,111 @@ namespace PlaywrightDemo
 
         //Checkbox Tests
         
+        // [Test]
+        // public async Task BikeCheckbox_ShouldBeVisible()
+        // {
+        //     await Page.GotoAsync(
+        //         "https://ultimateqa.com/simple-html-elements-for-automation/");
+
+        //     var bikeCheckbox = Page.Locator(
+        //         "input[type='checkbox']").Nth(0);
+
+        //     await Expect(bikeCheckbox).ToBeVisibleAsync();
+        // }
+        
+        // [Test]
+        // public async Task BikeCheckbox_ShouldBeChecked()
+        // {
+        //     await Page.GotoAsync(
+        //         "https://ultimateqa.com/simple-html-elements-for-automation/");
+
+        //     var bikeCheckbox = Page.Locator(
+        //         "input[type='checkbox'][value='Bike']");
+
+        //     Console.WriteLine(
+        //         $"Before click: {await bikeCheckbox.IsCheckedAsync()}");
+
+        //     await bikeCheckbox.ClickAsync();
+
+        //     Console.WriteLine(
+        //         $"After click: {await bikeCheckbox.IsCheckedAsync()}");
+
+        //     await Expect(bikeCheckbox).ToBeCheckedAsync();
+        // }
+
+        // Form Testing
+        
+        // [Test]
+        // public async Task ContactForm_NameField_ShouldAcceptInput()
+        // {
+        //     // Open the form directly
+        //     await Page.GotoAsync(
+        //         "https://40m40a.share-na2.hsforms.com/23I1BOSbZSkmmb1UP2OzAjw");
+
+        //     // Locate the Name field using its placeholder
+        //     var nameField = Page.GetByPlaceholder("Enter text").Nth(0);
+
+        //     // Enter a name
+        //     await nameField.FillAsync("Hari");
+
+        //     // Verify the entered name
+        //     await Expect(nameField).ToHaveValueAsync("Hari");
+        // }
+
+        // First check whether the email field is accepting input or not.
+        // [Test]
+        // public async Task ContactForm_EmailField_ShouldAcceptInput()
+        // {
+        //     // Open the form directly
+        //     await Page.GotoAsync(
+        //         "https://40m40a.share-na2.hsforms.com/23I1BOSbZSkmmb1UP2OzAjw");
+
+        //     // Locate the Email field using its placeholder
+        //     var emailField = Page.GetByPlaceholder("Enter email").Nth(0);
+
+        //     // Enter an email
+        //     await emailField.FillAsync("hari09");
+
+        //     // Verify the entered email
+        //     await Expect(emailField).ToHaveValueAsync("hari09");
+        // }
+        
+        // // The input email is valid or not
+        
+        // [Test]
+        // public async Task ContactForm_EmailField_ShouldRejectInvalidEmail()
+        // {
+        //     await Page.GotoAsync(
+        //         "https://40m40a.share-na2.hsforms.com/23I1BOSbZSkmmb1UP2OzAjw");
+
+        //     var emailField = Page.GetByPlaceholder("Enter email");
+
+        //     await emailField.FillAsync("hari08@gmail.com");
+
+        //     var isValid = await emailField.EvaluateAsync<bool>(
+        //         "element => element.validity.valid");
+
+        //     Assert.That(isValid, Is.True);
+        // }
+
+        // Check for the dropdown test this is the inspection script
         
         [Test]
-        public async Task BikeCheckbox_ShouldBeVisible()
+        public async Task ContactForm_InspectDropdown()
         {
             await Page.GotoAsync(
-                "https://ultimateqa.com/simple-html-elements-for-automation/");
+                "https://40m40a.share-na2.hsforms.com/23I1BOSbZSkmmb1UP2OzAjw");
 
-            var bikeCheckbox = Page.Locator(
-                "input[type='checkbox']").Nth(0);
+            // Find the dropdown using its visible question
+            var dropdown = Page.GetByText(
+                "How can UltimateQA elevate your automated testing?",
+                new() { Exact = false });
 
-            await Expect(bikeCheckbox).ToBeVisibleAsync();
-        }
-        
-        [Test]
-        public async Task BikeCheckbox_ShouldBeChecked()
-        {
-            await Page.GotoAsync(
-                "https://ultimateqa.com/simple-html-elements-for-automation/");
-
-            var bikeCheckbox = Page.Locator(
-                "input[type='checkbox'][value='Bike']");
-
+            // Print the HTML of the matched element
             Console.WriteLine(
-                $"Before click: {await bikeCheckbox.IsCheckedAsync()}");
-
-            await bikeCheckbox.ClickAsync();
-
-            Console.WriteLine(
-                $"After click: {await bikeCheckbox.IsCheckedAsync()}");
-
-            await Expect(bikeCheckbox).ToBeCheckedAsync();
+                await dropdown.EvaluateAsync<string>(
+                    "element => element.outerHTML"));
         }
+
     }
 }
